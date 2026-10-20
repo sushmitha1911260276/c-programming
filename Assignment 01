@@ -1,0 +1,235 @@
+1)
+#include <stdio.h>
+
+int main() {
+    float distance, fare = 100;
+    int member;
+
+    scanf("%f", &distance);
+    scanf("%d", &member);
+
+    if (distance > 10)
+        fare += (distance - 10) * 20;
+
+    if (member == 1)
+        fare *= 0.9;
+
+    printf("Final Fare: %.0f\n", fare);
+
+    return 0;
+}
+
+
+2)
+#include <stdio.h>
+
+int main() {
+    int questions, time, submitted;
+
+    scanf("%d", &questions);
+    scanf("%d", &time);
+    scanf("%d", &submitted);
+
+    if (questions >= 1 && time > 0 && submitted == 0)
+        printf("Submission Allowed");
+    else
+        printf("Submission Not Allowed");
+
+    return 0;
+}
+
+
+
+3)
+#include <stdio.h>
+
+int main() {
+    int coins, x, y;
+    int ben, blackbeard, pirates;
+
+    scanf("%d%d%d", &coins, &x, &y);
+
+    ben = coins * x / 100;
+    coins = coins - ben;
+
+    blackbeard = coins * y / 100;
+    coins = coins - blackbeard;
+
+    pirates = coins / 3;
+
+    printf("%d\n%d\n%d\n", ben, blackbeard, pirates);
+
+    return 0;
+}
+
+
+4)
+#include <stdio.h>
+
+int main() {
+    int d1, c1, d2, c2;
+    int total, dollars, cents;
+
+    scanf("%d%d%d%d", &d1, &c1, &d2, &c2);
+
+    total = d1 * 100 + c1 + d2 * 100 + c2;
+
+    dollars = total / 100;
+    cents = total % 100;
+
+    printf("%d\n%d\n", dollars, cents);
+
+    return 0;
+}
+
+
+
+5)
+#include <stdio.h>
+
+int main() {
+    float mileage;
+    int petrol, distance;
+
+    scanf("%f%d%d", &mileage, &petrol, &distance);
+
+    if (mileage * petrol >= distance)
+        printf("Can reach");
+    else
+        printf("Cannot reach");
+
+    return 0;
+}
+
+
+
+6)
+#include <stdio.h>
+
+int main() {
+    int a, b, c, car;
+
+    scanf("%d%d%d%d", &a, &b, &c, &car);
+
+    if (car % a == 0)
+        printf("Car %d goes into road A", car);
+    else if (car % b == 0)
+        printf("Car %d goes into road B", car);
+    else if (car % c == 0)
+        printf("Car %d goes into road C", car);
+    else
+        printf("No path exists");
+
+    return 0;
+}
+
+
+
+7)
+#include <stdio.h>
+
+int main() {
+    float principal, rate, years;
+    float interest, amount, discount, finalAmount;
+
+    scanf("%f%f%f", &principal, &rate, &years);
+
+    interest = principal * rate * years / 100;
+    amount = principal + interest;
+    discount = interest * 0.02;
+    finalAmount = amount - discount;
+
+    printf("%.2f\n", interest);
+    printf("%.2f\n", amount);
+    printf("%.2f\n", discount);
+    printf("%.2f\n", finalAmount);
+
+    return 0;
+}
+
+
+
+8)
+#include <stdio.h>
+
+int main() {
+    int experience, performance;
+
+    scanf("%d%d", &experience, &performance);
+
+    if (experience > 7 && performance >= 85)
+        printf("Level: Senior");
+    else if (experience >= 3 && performance >= 80)
+        printf("Level: Mid-Level");
+    else
+        printf("Level: Junior");
+
+    return 0;
+}
+
+
+9)
+#include <stdio.h>
+
+int main() {
+    int year, month, days;
+
+    scanf("%d%d", &year, &month);
+
+    if (year < 1900 || year > 9999) {
+        printf("0");
+        return 0;
+    }
+
+    switch (month) {
+        case 1: case 3: case 5: case 7:
+        case 8: case 10: case 12:
+            days = 31;
+            break;
+
+        case 4: case 6: case 9: case 11:
+            days = 30;
+            break;
+
+        case 2:
+            if ((year % 400 == 0) ||
+                (year % 4 == 0 && year % 100 != 0))
+                days = 29;
+            else
+                days = 28;
+            break;
+
+        default:
+            printf("0");
+            return 0;
+    }
+
+    printf("%d Days", days);
+
+    return 0;
+}
+
+
+
+10)
+#include <stdio.h>
+
+int main() {
+    int units;
+    float bill;
+
+    scanf("%d", &units);
+
+    if (units <= 200)
+        bill = units * 0.5;
+    else if (units <= 400)
+        bill = units * 0.65 + 100;
+    else if (units <= 600)
+        bill = units * 0.80 + 200;
+    else
+        bill = units * 1.25 + 425;
+
+    printf("Rs.%.0f", bill);
+
+    return 0;
+}
